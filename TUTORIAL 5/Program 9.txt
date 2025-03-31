@@ -1,0 +1,84 @@
+Q.9) Given a file “auto.csv” of automobile data with the fields index, company,
+body-style, wheel-base, length, engine-type, num-of-cylinders, horsepower
+average-mileage, and price, write Python codes using Pandas to
+1) Clean and Update the CSV file
+2) Find the most expensive car company name
+3) Print all toyota car details
+4) Print total cars of all companies
+5) Find the highest priced car of all companies
+6) Find the average mileage of all companies
+7) Sort all cars by Price column ( university question)
+
+
+
+
+import pandas as pd
+
+ #1: Read the CSV file and clean/update the data
+def clean_and_update_csv():
+    df = pd.read_csv("auto.csv")
+    
+   
+    df.dropna(inplace=True)  # This drops any rows with NaN values
+
+    df.reset_index(drop=True, inplace=True)
+
+    df.to_csv("cleaned_auto.csv", index=False)
+    
+    return df
+
+ #2: Find the most expensive car company
+def most_expensive_car_company(df):
+    most_expensive_row = df.loc[df['price'].idxmax()]
+    return most_expensive_row['company'], most_expensive_row['price']
+
+ #3: Print all Toyota car details
+def toyota_cars_details(df):
+    toyota_cars = df[df['company'] == 'toyota']
+    return toyota_cars
+
+ #4: Print total cars of all companies
+def total_cars_per_company(df):
+    total_cars = df.groupby('company').size()
+    return total_cars
+
+ #5: Find the highest priced car of all companies
+def highest_priced_car(df):
+    highest_priced_row = df.loc[df['price'].idxmax()]
+    return highest_priced_row
+
+ #6: Find the average mileage of all companies
+def average_mileage_per_company(df):
+    avg_mileage = df.groupby('company')['average-mileage'].mean()
+    return avg_mileage
+
+ #7: Sort all cars by the Price column
+def sort_cars_by_price(df):
+    sorted_cars = df.sort_values(by='price', ascending=True)
+    return sorted_cars
+
+
+if __name__ == "__main__":
+    
+    cleaned_df = clean_and_update_csv()
+    
+    
+    expensive_company, price = most_expensive_car_company(cleaned_df)
+    print(f"The most expensive car company is: {expensive_company} with price: {price}")
+
+    
+    print("\nToyota Cars Details:")
+    print(toyota_cars_details(cleaned_df))
+
+        print("\nTotal Cars of All Companies:")
+    print(total_cars_per_company(cleaned_df))
+
+        print("\nHighest Priced Car Details:")
+    print(highest_priced_car(cleaned_df))
+
+    
+    print("\nAverage Mileage of All Companies:")
+    print(average_mileage_per_company(cleaned_df))
+
+        print("\nSorted Cars by Price:")
+    print(sort_cars_by_price(cleaned_df))

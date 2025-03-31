@@ -1,0 +1,37 @@
+Q.13) Consider a CSV file ‘employee.csv’ with the following)
+columns(name, gender, start_date ,salary, team)
+Write commands to do the following using panda library.
+1. print first 7 records from employees file
+2. print all employee names in alphabetical order
+3. find the name of the employee with highest salary
+4. list the names of male employees
+5. Display to which all teams employees belong
+
+
+
+import pandas as pd
+
+df = pd.read_csv('employee.csv')
+
+# 1. Print first 7 records from employees file
+print("First 7 records:")
+print(df.head(7))
+
+# 2. Print all employee names in alphabetical order
+print("\nEmployee names in alphabetical order:")
+sorted_names = df['name'].sort_values()
+print(sorted_names.tolist())
+
+# 3. Find the name of the employee with highest salary
+highest_salary_employee = df.loc[df['salary'].idxmax(), 'name']
+print(f"\nEmployee with the highest salary: {highest_salary_employee}")
+
+# 4. List the names of male employees
+male_employees = df[df['gender'] == 'male']['name']
+print("\nMale employees:")
+print(male_employees.tolist())
+
+# 5. Display all unique teams employees belong to
+unique_teams = df['team'].unique()
+print("\nUnique teams employees belong to:")
+print(unique_teams.tolist())

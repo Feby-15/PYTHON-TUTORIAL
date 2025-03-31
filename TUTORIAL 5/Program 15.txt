@@ -1,0 +1,12 @@
+Q.15) Write a code segment that prints the names of all of the items in the current working directory.
+
+
+
+import os
+
+current_directory = os.getcwd()
+
+items = os.listdir(current_directory)
+
+for item in items:
+    print(item)

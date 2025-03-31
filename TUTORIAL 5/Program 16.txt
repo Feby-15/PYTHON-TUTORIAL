@@ -1,0 +1,28 @@
+Q.16) Write a python program to create two numpy arrays of random integers between 0 and 20 of shape (3, 3) and perform matrix addition, multiplication and transpose of the
+product matrix.
+
+
+
+import numpy as np
+
+np.random.seed(0)
+
+array1 = np.random.randint(0, 21, size=(3, 3))
+array2 = np.random.randint(0, 21, size=(3, 3))
+
+print("Array 1:")
+print(array1)
+print("\nArray 2:")
+print(array2)
+
+matrix_sum = array1 + array2
+print("\nMatrix Addition (Array 1 + Array 2):")
+print(matrix_sum)
+
+matrix_product = np.dot(array1, array2)
+print("\nMatrix Multiplication (Array 1 * Array 2):")
+print(matrix_product)
+
+matrix_transpose = np.transpose(matrix_product)
+print("\nTranspose of the Product Matrix:")
+print(matrix_transpose)
