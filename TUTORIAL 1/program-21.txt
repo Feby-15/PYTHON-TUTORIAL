@@ -1,0 +1,11 @@
+Q.21) Write a Python program to print the value of 2^(2n)+n+5 for n provided by the
+user.
+
+
+N = int(input("Enter a value for n: "))
+
+
+RESULT = 2**(2*N) + N + 5
+
+
+print(f"The value of 2^(2N) + N + 5 \n for N = {N} is: {RESULT}")

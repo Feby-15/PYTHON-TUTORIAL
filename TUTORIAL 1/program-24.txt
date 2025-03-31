@@ -1,0 +1,16 @@
+Q.24) Write a Python program to print all numbers between 100 and 1000 whose sum of
+digits is divisible by 9
+
+
+
+def Sum_of_Digits (Num):
+    
+    digit_sum = sum(int(digit) for digit in str(Num))
+    
+    
+    return digit_sum % 9 == 0
+
+
+for Num in range(100, 1000):
+    if Sum_of_Digits (Num):
+        print(Num, end=" ")

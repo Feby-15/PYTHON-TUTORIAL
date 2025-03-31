@@ -1,0 +1,26 @@
+Q.19) Write a Python program to count number of even numbers and odd numbers in a
+given set of n numbers
+
+
+
+def Even_Odd(numbers):
+    Even_Count = 0
+    Odd_Count = 0
+    for num in numbers:
+        if num % 2 == 0:
+            Even_Count += 1
+        else:
+            Odd_Count += 1
+    return Even_Count, Odd_Count
+
+n = int(input("Enter the number of elements: "))
+numbers = []
+print(f"Enter {n} numbers:")
+for _ in range(n):
+    num = int(input())
+    numbers.append(num)
+
+Even_Count, Odd_Count = Even_Odd(numbers)
+
+print(f"Even numbers count: {Even_Count}")
+print(f"Odd numbers count: {Odd_Count}")

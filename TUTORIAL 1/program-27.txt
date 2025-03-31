@@ -1,0 +1,31 @@
+Q.27) Write a Python program to find the roots of a quadratic equation, ax2+ bx + c =0 .
+
+
+
+import cmath  
+
+
+def Roots(a, b, c):
+    
+    Discriminant = b**2 - 4*a*c
+    
+    
+    Root1 = (-b + cmath.sqrt(Discriminant)) / (2 * a)
+    Root2 = (-b - cmath.sqrt(Discriminant)) / (2 * a)
+    
+    return Root1, Root2
+
+
+a = float(input("Enter coefficient a: "))
+b = float(input("Enter coefficient b: "))
+c = float(input("Enter coefficient c: "))
+
+
+if a == 0:
+    print("Coefficient a cannot be zero in a quadratic equation.")
+else:
+    
+    Root1, Root2 = Roots(a, b, c)
+    
+    
+    print(f"The roots of the equation are: {Root1} and {Root2}")

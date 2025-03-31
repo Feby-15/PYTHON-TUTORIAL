@@ -1,0 +1,17 @@
+Q.25)Write a python program to find X^Y or pow(X,Y) without using standard function
+
+
+
+def Powers(X, Y):
+    Result = 1
+    
+    for  in range(Y):
+        Result *= X
+    return Result
+
+X = int(input("Enter the value of X: "))
+Y = int(input("Enter the value of Y: "))
+
+result = Powers(X, Y)
+
+print(f"The value of {X}^{Y} is: {Result}")

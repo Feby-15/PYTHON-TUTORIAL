@@ -1,0 +1,15 @@
+Q.20) Write a Python code to determine whether the given string is a Palindrome or not
+using slicing. Do not use any string function.
+
+
+def Palindrome(s):
+   
+    return s == s[::-1]
+
+
+String = input("Enter a string: ")
+
+if Palindrome(String):
+    print(f"'{String}' is a palindrome.")
+else:
+    print(f"'{String}' is not a palindrome.")

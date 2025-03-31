@@ -1,0 +1,18 @@
+Q.13) Generate first 10 Fibonacci numbers
+
+
+
+def Fibonacci(n):
+    Fib_series = []
+    a, b = 0, 1  
+    for _ in range(n):
+        Fib_series.append(a)
+        a, b = b, a + b   
+    return Fib_series
+
+
+n = 10
+Fib_nums = Fibonacci(n)
+
+print("The first 10 Fibonacci numbers are:")
+print(Fib_nums)
