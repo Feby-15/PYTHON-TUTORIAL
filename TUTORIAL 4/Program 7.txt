@@ -1,0 +1,37 @@
+Q.7) Define a class in Python to store the details of students( rollno, mark1,mark2) with
+the following methods
+readData()- to assign values to class attributes
+computeTotal()-to find the total marks
+printDetails()- to print the attribute values and total marks.
+Create an object of this class and invoke the methods. ( Univesrsity question)
+
+
+class Student:
+    def __init__(self):
+       
+        self.rollno = 0
+        self.mark1 = 0
+        self.mark2 = 0
+
+    def readData(self):
+        
+        self.rollno = int(input("Enter Roll Number: "))
+        self.mark1 = float(input("Enter Marks for Subject 1: "))
+        self.mark2 = float(input("Enter Marks for Subject 2: "))
+
+    def computeTotal(self):
+       
+        return self.mark1 + self.mark2
+
+    def printDetails(self):
+        
+        total_marks = self.computeTotal()
+        print(f"Roll Number: {self.rollno}")
+        print(f"Marks 1: {self.mark1}")
+        print(f"Marks 2: {self.mark2}")
+        print(f"Total Marks: {total_marks}")
+
+student1 = Student()
+
+student1.readData()
+student1.printDetails()

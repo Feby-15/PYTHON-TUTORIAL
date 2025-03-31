@@ -1,0 +1,31 @@
+Q.6) Define a class Mobile to store the details of a Mobile (company, model,price) with
+the following methods.
+a) set_details()- to set the values to the data attributes
+b)display_details()-to display the data attribute values
+Create an object of the class and invoke methods. ( university question)
+
+
+class Mobile:
+    def __init__(self):
+       
+        self.company = ""
+        self.model = ""
+        self.price = 0.0
+
+    def set_details(self, company, model, price):
+       
+        self.company = company
+        self.model = model
+        self.price = price
+
+    def display_details(self):
+        
+        print(f"Company: {self.company}")
+        print(f"Model: {self.model}")
+        print(f"Price: ${self.price:.2f}")
+
+mobile_object = Mobile()
+
+mobile_object.set_details("Apple", "iPhone 14", 999.99)
+
+mobile_object.display_details()
