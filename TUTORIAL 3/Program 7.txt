@@ -1,0 +1,36 @@
+Q.7) Write a GUI program to inputs the integer, computes the square root, and outputs the result and handles input errors by displaying a message box.
+
+import tkinter as tk
+from tkinter import messagebox
+import math
+
+def compute_square_root():
+    try:
+    user_input = entry.get()
+   number = int(user_input)
+    if number < 0:
+            raise ValueError("Negative numbers do not have real square roots.")
+      sqrt_result = math.sqrt(number)
+      result_label.config(text=f"Square root: {sqrt_result:.2f}")
+
+    except ValueError as e:
+         messagebox.showerror("Input Error", str(e))
+   except Exception as e:
+        messagebox.showerror("Error", "An unexpected error occurred.")
+
+root = tk.Tk()
+root.title("Square Root Calculator")
+
+instruction_label = tk.Label(root, text="Enter an integer:")
+instruction_label.pack(pady=10)
+
+entry = tk.Entry(root)
+entry.pack(pady=10)
+
+calculate_button = tk.Button(root, text="Calculate Square Root", command=compute_square_root)
+calculate_button.pack(pady=20)
+
+result_label = tk.Label(root, text="Square root: ")
+result_label.pack(pady=10)
+
+root.mainloop()

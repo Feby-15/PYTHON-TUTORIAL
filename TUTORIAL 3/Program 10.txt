@@ -1,0 +1,61 @@
+Q.10) A bouncy program is defined as follows – The program computes and displays the total
+distance traveled by a ball, given three inputs—the initial height from which it is dropped, its bounciness index, and the number of bounces. Given the inputs write a GUI-based program to compute the total distance traveled.
+
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+
+def calculate_distance():
+    try:
+       
+        initial_height = float(entry_height.get())
+        bounciness_index = float(entry_bounciness.get())
+        number_of_bounces = int(entry_bounces.get())
+        
+       
+        total_distance = initial_height
+        
+      
+        height = initial_height
+        for _ in range(number_of_bounces):
+            height *= bounciness_index
+            total_distance += 2 * height  # Down and up
+        
+      
+        result_label.config(text=f"Total distance traveled: {total_distance:.2f} meters")
+    except ValueError:
+        messagebox.showerror("Input Error", "Please enter valid numerical values.")
+
+
+root = tk.Tk()
+root.title("Bouncy Ball Calculator")
+
+
+frame = ttk.Frame(root, padding="10")
+frame.grid(row=0, column=0, sticky=(tk.W, tk.E))
+
+
+ttk.Label(frame, text="Initial Height (m):").grid(column=0, row=0, sticky=tk.W)
+entry_height = ttk.Entry(frame)
+entry_height.grid(column=1, row=0)
+
+
+ttk.Label(frame, text="Bounciness Index (0 < b < 1):").grid(column=0, row=1, sticky=tk.W)
+entry_bounciness = ttk.Entry(frame)
+entry_bounciness.grid(column=1, row=1)
+
+
+ttk.Label(frame, text="Number of Bounces:").grid(column=0, row=2, sticky=tk.W)
+entry_bounces = ttk.Entry(frame)
+entry_bounces.grid(column=1, row=2)
+
+
+calculate_button = ttk.Button(frame, text="Calculate Distance", command=calculate_distance)
+calculate_button.grid(column=0, row=3, columnspan=2)
+
+
+result_label = ttk.Label(frame, text="")
+result_label.grid(column=0, row=4, columnspan=2)
+
+
+root.mainloop()

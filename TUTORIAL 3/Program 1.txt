@@ -1,0 +1,19 @@
+Q.1) 1.	Draw a star using turtle methods
+
+
+import turtle
+def draw_star(size):
+    for _ in range(5):
+        turtle.forward(size)
+        turtle.right(144) 
+
+
+turtle.speed(2)         
+turtle.color("blue")    
+turtle.fillcolor("yellow")  
+
+
+turtle.begin_fill() 
+draw_star(100)         
+turtle.end_fill()  
+turtle.done()        

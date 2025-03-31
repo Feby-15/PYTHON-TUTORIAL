@@ -1,0 +1,23 @@
+Q.12) Write a GUI program to convert an input string to uppercase and displays the resultimport tkinter as tk
+
+def convert_to_uppercase():
+    input_text = entry.get()  
+    upper_text = input_text.upper()
+    result_label.config(text=upper_text)  
+
+root = tk.Tk()
+root.title("String to Uppercase Converter")
+
+instruction_label = tk.Label(root, text="Enter a string:")
+instruction_label.pack()
+
+entry = tk.Entry(root, width=50)
+entry.pack()
+
+convert_button = tk.Button(root, text="Convert to Uppercase", command=convert_to_uppercase)
+convert_button.pack()
+
+result_label = tk.Label(root, text="", font=("Helvetica", 16))
+result_label.pack()
+
+root.mainloop()
