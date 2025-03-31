@@ -1,0 +1,25 @@
+Q.28) Write a Python program to read a list of numbers and sort the list in a nondecreasing
+order without using any built in functions. Separate function should
+be written to sort the list wherein the name of the list is passed as the parameter.
+
+
+
+
+def sorting(arr):
+    N = len(arr)
+    for i in range(n):
+        for j in range(0, N - i - 1):
+            if arr[j] > arr[j + 1]: 
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+def list():
+
+    Numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    
+
+    sorting(Numbers)
+    
+    print("Sorted List:", Numbers)
+
+list()
+

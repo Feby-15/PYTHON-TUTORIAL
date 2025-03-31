@@ -1,0 +1,20 @@
+Q.8) Write a Program to replace all occurrence of a substring with a new substring.
+
+
+
+
+def substring_replace(input_strg, old_substrg, new_substrg):
+   
+    Result = input_strg.replace(old_substrg, new_substrg)
+    return Result
+
+
+user_input = input("Enter the main string: ")
+old_substrg = input("Enter the substring to replace: ")
+new_substrg = input("Enter the new substring: ")
+
+
+new_string = substring-replace(user_input, old_substrg, new_substrg)
+
+
+print("Modified string:", new_string)

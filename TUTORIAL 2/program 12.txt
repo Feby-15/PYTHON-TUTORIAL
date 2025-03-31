@@ -1,0 +1,15 @@
+Q.12) Write Python script for converting decimal number into Binary number.
+
+
+
+def Decimal_into_Binary(Decimal_num):
+
+    Binary_num = bin(Decimal_num)[2:]
+    return Binary_num
+
+user_decimal = int(input("Enter a decimal number: "))
+
+
+Binary_result = Decimal_into_Binary(User_decimal)
+
+print(f"The binary representation of {User_decimal} is: {Binary_result}")

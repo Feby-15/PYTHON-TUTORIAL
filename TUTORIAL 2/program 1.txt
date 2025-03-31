@@ -1,0 +1,17 @@
+Q.1) Write a program to remove all vowel characters from a string.
+
+
+
+def Vowels(input_string):
+    vowels = "aeiouAEIOU"
+    Result = "".join([char for char in input_string if char not in vowels])
+    return Result
+
+
+input = input("Enter a string: ")
+
+
+new_string = Vowels(input)
+
+
+print("String after removing vowels:", new_string)

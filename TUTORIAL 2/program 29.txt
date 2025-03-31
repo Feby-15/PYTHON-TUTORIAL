@@ -1,0 +1,27 @@
+Q.29) Write a program to do basic set operations
+
+
+
+
+def operations():
+    
+    set 1 = set(map(int, input("Enter elements of first set separated by space: ").split()))
+    set 2 = set(map(int, input("Enter elements of second set separated by space: ").split()))
+
+  
+    union = set 1 | set 2  
+    intersection= set 1 & set 2  
+    diff_set 1 = set 1 - set 2  
+    diff_set 2 = set 2 - set 1 
+    symmetric_diff_set = set1 ^ set2  
+
+   
+    print("\nSet 1:", set 1)
+    print("Set 2:", set 2)
+    print("\nUnion:", union)
+    print("Intersection:", intersection)
+    print("Difference (Set1 - Set2):", diff_set 1)
+    print("Difference (Set2 - Set1):", diff_set 2)
+    print("Symmetric Difference:", symmetric_diff_set)
+
+operations()

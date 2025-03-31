@@ -1,0 +1,22 @@
+Q.3) Write a python script for palindrome checking without reversing the string
+
+
+def palindrome_check(io_string):
+    
+    io_string = io_string.replace(" ", "").lower()
+    
+    
+    length = len(io_string)
+    for i in range(length // 2):
+        if io_string[i] != io_string[length - i - 1]:
+            return False
+    return True
+
+
+user_input = input("Enter a string: ")
+
+
+if palindrome_check(user_input):
+    print(f"'{user_input}' is a palindrome.")
+else:
+    print(f"'{user_input}' is not a palindrome.")

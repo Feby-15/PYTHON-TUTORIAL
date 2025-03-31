@@ -1,0 +1,20 @@
+Q.22) Program to read a string and remove the given words from the string.
+
+
+
+def Remove():
+    
+    org_string = input("Enter a string: ")
+    
+  
+    removed_words = input("Enter the words to remove (separated by spaces): ").split()
+    
+    
+    for word in Sremoved_words:
+        input_string = input_string.replace(word, "")
+    
+  
+    print("Modified string:", org_string)
+
+
+Remove()

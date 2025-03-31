@@ -1,0 +1,14 @@
+Q.7)Write a Program to converting all lowercase letters into uppercase.
+
+
+def uppercase_converstion(input_string):
+    
+    Result = input_string.upper()
+    return Result
+
+
+user_input = input("Enter a string: ")
+
+uppercase_string = uppercase_converstion(user_input)
+
+print("String in uppercase:", uppercase_string)

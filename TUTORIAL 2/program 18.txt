@@ -1,0 +1,19 @@
+Q.18) Write a Python program to print the factorial of a number using recursion.
+
+
+
+
+def Fact(n):
+   
+    if n == 0 or n == 1:
+        return 1
+ 
+    else:
+        return n * Fact(n - 1)
+
+Num = int(input("Enter a number to find its factorial: "))
+
+
+Result = Fact(Num)
+
+print(f"The factorial of {Num} is: {Result}")

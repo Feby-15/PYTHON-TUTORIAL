@@ -1,0 +1,19 @@
+Q.20) Program to read list of names and sort the list in alphabetical order.
+
+
+
+
+def Names_sorting():
+  
+    Names = input("Enter a list of names separated by commas: ").split(',')
+
+    
+    Names = [name.strip() for name in names]
+
+    Names.sort()
+
+    print("The names in alphabetical order are:")
+    for name in names:
+        print(name)
+
+Names_sorting()

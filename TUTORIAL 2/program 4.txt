@@ -1,0 +1,21 @@
+Q.4) Write a program to replace all the spaces in the input string with * or if no
+spaces found, put $ at the start and end of the string.
+
+
+def new_string(input_string):
+ 
+    if ' ' in input_string:
+    
+        return input_string.replace(' ', '*')
+    else:
+       
+        return f"${input_string}$"
+
+
+user_io = input("Enter a string: ")
+
+
+new_string = new_string(io_input)
+
+
+print("Modified string:", new_string)

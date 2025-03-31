@@ -1,0 +1,21 @@
+Q.23)Program to read list of numbers and find the median
+
+
+
+def Median():
+    Numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    
+    Numbers.sort()
+
+    n = len(Numbers)
+    
+    if n % 2 == 1:
+        
+        MEDIAN = Numbers[n // 2]
+    else:
+        
+        MEDIAN = (Numbers[n // 2 - 1] + Numbers[n // 2]) / 2
+    
+    print(f"The median is: {MEDIAN}")
+
+Median()

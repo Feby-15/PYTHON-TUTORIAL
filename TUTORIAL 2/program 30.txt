@@ -1,0 +1,18 @@
+Q.30) Remove duplicate elements from a list.
+
+
+def duplicates_removal(lst):
+    list = [] 
+    seen = set()  
+
+    for item in lst:
+        if item not in seen:
+            list.append(item)  
+            seen.add(item) 
+
+    return list
+
+
+nums = list(map(int, input("Enter numbers separated by space: ").split()))
+
+print("List after removing duplicates:", duplicates_removal(nums))

@@ -1,0 +1,19 @@
+Q.6) Write a program to remove all occurrence of a substring from a string.
+
+
+
+
+def Substring(input_string, substring):
+    
+    result = input_string.replace(substring, "")
+    return result
+
+
+user_input = input("Enter the main string: ")
+substring_input = input("Enter the substring to remove: ")
+
+
+new_string = Substring(user_input, substring_input)
+
+
+print("Modified string:", new_string)

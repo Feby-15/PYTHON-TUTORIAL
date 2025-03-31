@@ -1,0 +1,16 @@
+Q.14) Write a python function to find the area of a circle.
+
+
+
+import math
+
+def circle_area(radius):
+
+    Area = math.pi * (radius ** 2)
+    return Area
+
+Radius = float(input("Enter the radius of the circle: "))
+
+circle_area= circle_area(Radius)
+
+print(f"The area of the circle with radius {Radius} is: {circle_area}")
