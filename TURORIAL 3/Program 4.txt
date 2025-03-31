@@ -1,0 +1,47 @@
+Q.4) Write a GUI based program that allows the user to convert temperature values between degrees Fahrenheit and degrees Celsius.  The interface should have labeled entry fields for these two values. These components should arrange in a grid where the labels occupy the first row and the corresponding field occupy the second row. At start up the Fahrenheit field should contain 32 and the Celsius field contain 0.0.The third row in the window contain two command buttons ,labeled >>>> and <<<<.When the user presses the first button, the program should use the data in the Fahrenheit field to compute the Celsius value, which should then be output to the Celsius field. The second button should perform the inverse function?
+
+import tkinter as tk
+
+def fahrenheit_to_celsius():
+    try:
+        fahrenheit = float(fahrenheit_entry.get())
+        celsius = (fahrenheit - 32) * 5.0 / 9.0
+        celsius_entry.delete(0, tk.END)  
+        celsius_entry.insert(0, f"{celsius:.1f}")  
+    except ValueError:
+        celsius_entry.delete(0, tk.END)  
+        celsius_entry.insert(0, "Invalid Input")
+
+def celsius_to_fahrenheit():
+    try:
+        celsius = float(celsius_entry.get())
+        fahrenheit = (celsius * 9.0 / 5.0) + 32
+        fahrenheit_entry.delete(0, tk.END)  
+        fahrenheit_entry.insert(0, f"{fahrenheit:.1f}") 
+    except ValueError:
+        fahrenheit_entry.delete(0, tk.END) 
+        fahrenheit_entry.insert(0, "Invalid Input")
+
+root = tk.Tk()
+root.title("Temperature Converter")
+
+fahrenheit_label = tk.Label(root, text="Degrees Fahrenheit")
+fahrenheit_label.grid(row=0, column=0)
+
+fahrenheit_entry = tk.Entry(root)
+fahrenheit_entry.grid(row=1, column=0)
+fahrenheit_entry.insert(0, "32") 
+celsius_label = tk.Label(root, text="Degrees Celsius")
+celsius_label.grid(row=0, column=1)
+
+celsius_entry = tk.Entry(root)
+celsius_entry.grid(row=1, column=1)
+celsius_entry.insert(0, "0.0")  
+
+convert_to_celsius_button = tk.Button(root, text=">>>>", command=fahrenheit_to_celsius)
+convert_to_celsius_button.grid(row=2, column=0)
+
+convert_to_fahrenheit_button = tk.Button(root, text="<<<<", command=celsius_to_fahrenheit)
+convert_to_fahrenheit_button.grid(row=2, column=1)
+
+root.mainloop()
